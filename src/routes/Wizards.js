@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
+import { getData } from '../utils/data'
 
 export default function Wizards() {
   const ENDPOINT = 'Wizards';
@@ -41,12 +42,12 @@ export default function Wizards() {
   );
 }
 
-const Wizard = () => {
+const Wizard = ({ wizard }) => {
   return (
     <tr>
       <td>{`${wizard.firstName} ${wizard.lastName}`}</td>
       <td>{wizard.firstName}</td>
       <td>{wizard.lastName}</td>
     </tr>
-  )
+  );
 }
